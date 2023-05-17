@@ -1,0 +1,35 @@
+1'
+CREATE TABLE Ingredients(
+  Name varchar (255),
+  Conein_lactose Boolean,
+  Vegetarian Boolean,
+  vegan  Boolean,
+  Gluten_free Boolean,
+  Price Double
+  );
+
+  INSERT INTO Ingredients (Name,Conein_lactose,Vegetarian,vegan, Gluten_free,Price)
+  VALUE ('Eggs', false, true, false, true,2.8);
+  INSERT INTO Ingredients (Name,Conein_lactose,Vegetarian,vegan, Gluten_free,Price)
+  VALUE ('Bread', false, true, true, false,1.5);
+  INSERT INTO Ingredients (Name,Conein_lactose,Vegetarian,vegan, Gluten_free,Price)
+  VALUE ('Beef Patty', false, false, false, true,2.8);
+  INSERT INTO Ingredients (Name,Conein_lactose,Vegetarian,vegan, Gluten_free,Price)
+  VALUE ('Lettuce', false, true, true, true,3.5);
+  INSERT INTO Ingredients (Name,Conein_lactose,Vegetarian,vegan, Gluten_free,Price)
+  VALUE ('Yoghurt', true, true, false, true,0.85);
+
+
+  2'
+  SELECT Name FROM Ingredients;
+
+  3'
+  SELECT Name,Price FROM Ingredients;
+
+  4'
+  SELECT * FROM Ingredients                                 // seleziona tutte le colonne
+  ORDER BY Name;                                              //ordina in ordine alfabetico, agg desc se lo vuoi decrescente
+
+  5'
+  SELECT * FROM Ingredients
+  ORDER BY Gluten_free desc;                             //  ordinati innmodo decrescente cosii da mettere i true in top

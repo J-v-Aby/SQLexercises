@@ -1,0 +1,7 @@
+CREATE TABLE Ingridients(
+  Name varchar (255),
+  Conein_lactose Boolean,
+  Vegetarian Boolean,
+  vegan  Boolean,
+  Gluten_free Boolean
+  );

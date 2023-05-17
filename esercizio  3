@@ -1,0 +1,95 @@
+tabella
+
+CREATE TABLE Ingredients(
+  Name varchar (255),
+  Conein_lactose Boolean,
+  Vegetarian Boolean,
+  vegan  Boolean,
+  Gluten_free Boolean,
+  Price Double
+  );
+
+  INSERT INTO Ingredients (Name,Conein_lactose,Vegetarian,vegan, Gluten_free,Price)
+  VALUE ('Eggs', false, true, false, true,2.8);
+  INSERT INTO Ingredients (Name,Conein_lactose,Vegetarian,vegan, Gluten_free,Price)
+  VALUE ('Bread', false, true, true, false,1.5);
+  INSERT INTO Ingredients (Name,Conein_lactose,Vegetarian,vegan, Gluten_free,Price)
+  VALUE ('Beef Patty', false, false, false, true,2.8);
+  INSERT INTO Ingredients (Name,Conein_lactose,Vegetarian,vegan, Gluten_free,Price)
+  VALUE ('Lettuce', false, true, true, true,3.5);
+  INSERT INTO Ingredients (Name,Conein_lactose,Vegetarian,vegan, Gluten_free,Price)
+  VALUE ('Yoghurt', true, true, false, true,0.85);
+
+
+CREATE TABLE MEAL (
+  NAME VARCHAR(255),
+  PRICE DOUBLE,
+  CALORIES INT
+);
+INSERT INTO MEAL(NAME, PRICE, CALORIES)
+VALUE ('Spaghetti Bolognese', 12.99, 600);
+INSERT INTO MEAL(NAME, PRICE, CALORIES)
+VALUE ('Grilled Chicken Sandwich', 8.99, 400);
+INSERT INTO MEAL(NAME, PRICE, CALORIES)
+VALUE ('Pesto Pasta', 10.99, 550);
+INSERT INTO MEAL(NAME, PRICE, CALORIES)
+VALUE ('Steak and Mash', 19.99, 800);
+INSERT INTO MEAL(NAME, PRICE, CALORIES)
+VALUE ('Sushi Platter', 15.99, 700);
+
+
+
+  Using a SELECT statement with a WHERE clause:
+   1' retrieve all meals that have a price less than €15
+
+   SELECT * FROM meal
+   WHERE price < 15 ;
+
+ 2' retrieve all ingredients that are vegetarian.
+
+    SELECT * FROM ingredients
+    WHERE vegetarian IS true ;
+
+  3' retrieve all meals that have more than 500 calories.
+
+    SELECT * FROM meal
+    WHERE calories>500 ;
+
+  4' retrieve all meals that have a price between €15 and €16.
+
+    SELECT * FROM meal
+    WHERE price>15 AND price <16 ;
+
+  5' retrieve all ingredients that are both lactose-free (note lactose FREE) and gluten-free.
+
+    SELECT * FROM ingredients
+    WHERE Conein_lactose IS false AND Gluten_free IS true ;                IL RISULTATO é UGUALE MA CAMBIA QUALCOSA?
+    WHERE !Conein_lactose AND Gluten_free;
+
+  6' Using a SELECT statement with a WHERE clause and logical operator(s),
+  retrieve all meals that have a price less than €15 or more than 600 calories.
+
+    SELECT * FROM meal
+    WHERE price <15 OR calories >600 ;
+
+  7' retrieve all ingredients that are vegan or gluten-free
+
+    SELECT * FROM ingredients
+    WHERE vegan IS true OR gluten_free IS true;
+
+  8' retrieve all meals with the name 'Pesto Pasta'
+
+    SELECT * FROM meal
+    WHERE name = 'pesto pasta';
+
+  9' retrieve all ingredients that are not lactose-free
+
+    SELECT * FROM ingredients
+    WHERE Conein_lactose IS True;
+
+  10' Using a SELECT statement with a WHERE clause and a logical operator,
+   retrieve all meals that have a price more than €20 and less than 800 calories.
+
+
+SELECT * FROM meal
+WHERE price>20 AND Calories <800;                  //il prezzo massimo di meal é 19,99, essendo and non esiste il dato

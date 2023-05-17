@@ -1,0 +1,29 @@
+Use all of the functions below, find out what they do, write a description for them here or in the comments of the code.
+ Add a meaningful column alias
+
+CONCAT(COLUMN1, COLUMN2) AS ALIAS_NAME //unisce gli elementi della colonna uno (passati come stringa) a quelli della colonna due
+                                           un po come la stringa di spiegazione in un sout java
+ LOWER(COLUMN)   // scrive la colonna in minuscolo con l'aggiunta di lower al nome della colonna almeno che non la si rinomina con as
+ UPPER(COLUMN) // scrive la colonna in MAIUSCOLO con l'aggiunta di upper al nome della colonna almeno che non la si rinomina con as
+ TRIM(COLUMN)  // leva spazi extra
+ LENGTH(COLUMN)  // conta la quantitá dei caratteri in ogni campo, incluso gli spazi
+ SUBSTRING(COLUMN, START, LENGTH) // permette di estrarre un numero x le lettere dei campi nella colonna selezionata (s=1,l=x)
+ ROUND(COLUMN, DECIMAL_PLACES) // arrotonda 1 un punto nella posizione selezionata
+ DATE_ADD(COLUMN, INTERVAL EXPRESSION UNIT)  // ora avanti rispetto al presente ( now())
+ DATE_SUB(COLUMN, INTERVAL EXPRESSION UNIT) // ora indiero rispetto al presente ( now())
+ FORMAT(COLUMN, FORMAT_STRING)  // aggiunge spazi dopo la virgola
+
+
+
+Using DATE_ADD or DATE_SUB and the following SQL
+
+SELECT NOW();
+
+Select your birthday by passing the result into the next item
+
+i.e. DATE_ADD(DATE_ADD(NOW(), INTERVAL 7 DAY), INTERVAL 2 MONTH) as BIRTHDAY_DATE
+
+If you're feeling really adventurous try to get the time to exactly midnight!
+
+SELECT
+DATE_ADD(DATE_ADD(DATE_ADD(DATE_ADD(NOW(), INTERVAL 12 DAY), INTERVAL 7 MONTH),INTERVAL 5 HOUR), INTERVAL 42 MINUTE) as BIRTHDAY_DATE;
