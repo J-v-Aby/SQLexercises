@@ -1,0 +1,11 @@
+select * from ingredient i  ;
+
+alter table ingredient
+add constraint unique(name)
+
+alter table ingredient
+modify NAME VARCHAR (255) not null,
+modify VEGAN BOOLEAN not null,
+modify VEGETARIAN BOOLEAN not null,
+modify GLUTEN_FREE BOOLEAN not null,
+modify CONTAINS_LACTOSE BOOLEAN not null;
